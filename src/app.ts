@@ -6,11 +6,9 @@ async function main() {
     if (process.env.IS_CI !== 'true') {
         require('dotenv').config();
       }
-    // const forecastKwh = await getSolcastRooftopSiteForecast()
-    // const batteryCapacityKwh = await getBatteryCapacity()
-
-    const forecastKwh = 13.458099999999998
-    const batteryCapacityKwh = 9.233408
+    const forecastKwh = await getSolcastRooftopSiteForecast()
+    const batteryCapacityKwh = await getBatteryCapacity()
+    
     console.log('Forecast: ' + forecastKwh)
     console.log('Battery Capacity ' + batteryCapacityKwh)
 
