@@ -21,6 +21,7 @@ async function main() {
 
 function getMinimumPercentageCharge(batteryCapacityKwh: number): number {
   const minKwhCharge: number = Number(process.env.MIN_KWH_CHARGE)
+  console.log('Min Kwh charge: ' + minKwhCharge)
   const minCharge = ((minKwhCharge / batteryCapacityKwh) * 100)
   console.log('Min Charge ' + minCharge)
   return minCharge
