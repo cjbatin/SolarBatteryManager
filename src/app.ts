@@ -6,17 +6,17 @@ async function main() {
     if (process.env.IS_CI !== 'true') {
         require('dotenv').config();
       }
-    // const forecastKwh = await getSolcastRooftopSiteForecast()
+    const forecastKwh = await getSolcastRooftopSiteForecast()
     const batteryCapacityKwh = await getBatteryCapacity()
     
-    // console.log('Forecast: ' + forecastKwh)
+    console.log('Forecast: ' + forecastKwh)
     console.log('Battery Capacity ' + batteryCapacityKwh)
 
-    // const percentageChargeFromSolar = getPercentageChargeFromSolar(forecastKwh, batteryCapacityKwh)
-    // const percentageChargeRequired = getChargeRequired(percentageChargeFromSolar)
+    const percentageChargeFromSolar = getPercentageChargeFromSolar(forecastKwh, batteryCapacityKwh)
+    const percentageChargeRequired = getChargeRequired(percentageChargeFromSolar)
     const minimumPercentageCharge = getMinimumPercentageCharge(batteryCapacityKwh)
-    // const percentageChargeToSet = getPercentageChargeToSet(minimumPercentageCharge, percentageChargeRequired)
-    // await setBatteryACChargeLevel(percentageChargeToSet)
+    const percentageChargeToSet = getPercentageChargeToSet(minimumPercentageCharge, percentageChargeRequired)
+    await setBatteryACChargeLevel(percentageChargeToSet)
 };
 
 function getMinimumPercentageCharge(batteryCapacityKwh: number): number {
