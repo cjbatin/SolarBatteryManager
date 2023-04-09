@@ -24,8 +24,8 @@ jobs:
           run: npm run run
           env:
             IS_CI: 'true'
-            MIN_KWH_CHARGE: $MIN_KWH_CHARGE
-            FORECAST_TOLERANCE_PERCENTAGE: $FORECAST_TOLERANCE_PERCENTAGE
+            MIN_KWH_CHARGE: ${{ vars.MIN_KWH_CHARGE }}
+            FORECAST_TOLERANCE_PERCENTAGE: ${{ vars.FORECAST_TOLERANCE_PERCENTAGE }} 
             GIV_ENERGY_API_KEY: ${{ secrets.GIV_ENERGY_API_KEY }}
             SOLCAST_SITE_ID: ${{ secrets.SOLCAST_SITE_ID }}
             SOLCAST_API_KEY: ${{ secrets.SOLCAST_API_KEY }}
